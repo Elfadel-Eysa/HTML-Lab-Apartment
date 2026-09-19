@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sandy and Leslie's apartment</title>
+	<link rel="stylesheet" href="apartment_layout.css">
+	<link rel="stylesheet" href="mobile.css">
+
+	<style>
+		
+
+		main {
+			display: grid;
+			grid-template-columns: 4fr 3fr 2fr;
+			grid-template-rows: auto auto auto ;
+			grid-template-areas: 
+								 "welcome welcome welcome welcome services services services location location"
+								 "survey survey survey survey services services services location location"
+								 "gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+			gap: 20px;
+		}
+
+		.welcome {
+			grid-area: welcome;
+		}
+		.services {
+			grid-area: services;
+		}
+		.location {
+			grid-area: location;
+		}
+		.survey {
+			grid-area: survey;
+		}
+		.gallery {
+			grid-area: gallery;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Sandy and Leslie's apartment</h1>
+	</header>
+	<p>Click a room for a detailed view.</p>
+	<img class="imgmap" src="images/apartmentfloorplan.jpg" usemap="#aptmap" alt="Floor plan for the apartment" />
+		<map name="aptmap">
+			<area shape="poly" coords="58,10,39,161,135,160,131,208,189,207,200,9" href="bedroom.html" alt="Bedroom 1" />
+			<area shape="rect" coords="200,10,351,161" href="bedroom.html" alt="Bedroom 2" />
+			<area shape="circle" coords="411,125,46" href="diningroom.html" alt="Dining Room" />
+			<area shape="rect" coords="385,389,247,236" href="kitchen.html" alt="Kitchen" />
+			<area shape="rect" coords="391,388,548,174" href="livingroom.html" alt="Living Room" />
+			<area shape="default" href="apartment.html" alt="Apartment Home" />
+		</map>
+	<nav>
+		<ul class="nav-bar">
+			<li><a href="apartment.html">Apartment</a></li>
+			<li><a href="bedroom.html">Bedroom 1</a></li>
+			<li><a href="bedroom.html">Bedroom 2</a></li>
+			<li><a href="diningroom.html">Dining Room</a></li>
+			<li><a href="kitchen.html">Kitchen</a></li>
+			<li><a href="livingroom.html">Living Room</a></li>
+		</ul>
+	</nav>
+	<main>
+
+		<section class="welcome">
+			<h2>Welcome Message</h2>
+			<audio controls="controls">
+				<source src="apartment.mp3" type="audio/mpeg" />
+				Your browser does not support the audio element
+			</audio>
+			<p>
+				Transcript: Hello. Welcome to our apartment. You'll really enjoy living here. 
+				The rooms are spacous and the apartment building amenities are fantastic. 
+				We look forward to hearing from you!
+			</p>
+		</section>		
+		<section class="survey">
+			<h2>Survey</h2>
+				<form>
+					<span>How did you find out about this apartment? Check any that apply:</span><br /><br />
+					<input type="checkbox" name="findout" id="web" value="websearch" />
+					<label for="web">Web search</label>
+					<input type="checkbox" name="findout" id="friend" value="friend" />
+					<label for="friend">Friend</label>
+					<input type="checkbox" name="findout" id="news" value="newspaper" />
+					<label for="news">Newspaper</label>
+					<br /><br />
+					<input type="submit" value="Submit" id="submit" />
+					<input type="reset" value="Reset Form" id="reset" />
+				</form>
+		</section>
+		<section class="services">
+			<h2>Apartment Services:</h2>
+			<table>
+				<thead>
+					<tr>
+						<th class="top-left">Services</th>
+						<th class="top-right">Day/Hours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="gym-pool">Gym</td>
+						<td rowspan="2">Monday-Friday 6am - 10pm<br /> Saturday 8am - 8pm<br />Sunday 8am - 5pm</td>
+					</tr>
+					<tr>
+						<td class="gym-pool">Pool</td>
+					</tr>
+					<tr>
+						<td>Laundry</td>
+						<td>24/7</td>
+					</tr>
+					<tr>
+						<td class="bottom" colspan="2">Please do not allow people you do not know to use these facilities</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+		<section class="location">
+			<h2>Location</h2>
+			<img src="images/location.png" alt="location" />
+		</section>
+		
+		<section class="gallery">
+			<h2>Gallery</h2>
+			<ul class="gallery-list">
+				<li><h3>Balcony</h3>
+					<img src="thumbnails/balcony_sm.jpg" alt="balcony" />
+				</li>
+				<li><h3>Bathroom</h3>
+					<img src="thumbnails/bathroom_sm.jpg" alt="bathroom" />
+				</li>
+				<li><h3>Bedroom</h3>
+					<img src="thumbnails/bedroom_sm.jpg" alt="bedroom" />
+				</li>
+				<li><h3>Dining Room</h3>
+					<img src="thumbnails/diningroom_sm.jpg" alt="diningroom" />
+				</li>
+				<li><h3>Kitchen</h3>
+					<img src="thumbnails/kitchen_sm.jpg" alt="kitchen" />
+				</li>
+				<li><h3>Living Room</h3>
+					<img src="thumbnails/livingroom_sm.jpg" alt="livingroom" />
+				</li>
+			</ul>
+		</section>
+
+
+
+	</main>
+
+	<footer>
+		<p>For more information contact: <a href="mailto:apartment@example.com">apartment@example.com</a> or <a href="tel:9055551234">905-555-1234 </a></p>
+		<p>&copy Sandy and Leslie 2025</p>
+
+
+	</footer>
+
+</body>
+</html>
