@@ -5,6 +5,9 @@
 	height: auto;
 		
 }
+.room-instruction {
+    text-align: center;
+}
 	
 nav {
 	display: flex;
